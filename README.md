@@ -1,6 +1,7 @@
 # getset
 Get information from various serialisation types and set them into templates.
 
+[![Go Report Card](https://goreportcard.com/badge/github.com/codingconcepts/getset)](https://goreportcard.com/report/github.com/codingconcepts/getset)
 [![Build Status](https://travis-ci.org/codingconcepts/getset.svg?branch=master)](https://travis-ci.org/codingconcepts/getset)
 
 ## Installation
