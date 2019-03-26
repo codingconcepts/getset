@@ -9,6 +9,7 @@ import (
 )
 
 const (
+	// TypeJSON will get a value from a given input using JSON dot notation.
 	TypeJSON = "json"
 )
 

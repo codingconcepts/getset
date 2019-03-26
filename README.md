@@ -1,6 +1,8 @@
 # getset
 Get information from various serialisation types and set them into templates.
 
+[![Build Status](https://travis-ci.org/codingconcepts/getset.svg?branch=master)](https://travis-ci.org/codingconcepts/getset)
+
 ## Installation
 
 ``` bash
