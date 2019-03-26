@@ -13,7 +13,7 @@ $ go get -u -d github.com/codingconcepts/getset
 ## Usage
 
 ``` bash
-a := New()
+a := getset.New()
 
 if err := a.Get(TypeJSON, []byte(`{"a":{"b":"c"}}`), "a.b", "b"); err != nil {
 	log.Fatalf("error getting value: %v", err)
