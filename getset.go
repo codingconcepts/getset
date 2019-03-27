@@ -3,7 +3,7 @@ package getset
 import (
 	"bytes"
 	"fmt"
-	"html/template"
+	"text/template"
 
 	"github.com/tidwall/gjson"
 )

@@ -2,8 +2,8 @@ package getset
 
 import (
 	"bytes"
-	"html/template"
 	"testing"
+	"text/template"
 )
 
 func TestSMAP_Set(t *testing.T) {

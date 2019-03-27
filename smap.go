@@ -1,9 +1,9 @@
 package getset
 
 import (
-	"html/template"
 	"io"
 	"sync"
+	"text/template"
 )
 
 type smap struct {
