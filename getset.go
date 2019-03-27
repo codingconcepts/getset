@@ -25,6 +25,12 @@ func New() *accumulator {
 	}
 }
 
+// Get extracts information from input assuming it's of type t (JSON etc.).
+// The path property will be used to access data within that input, so in
+// the case of JSON, path will be dot notation to the key you're wanting a
+// value for.  Use the name property to provide your own name to the value
+// for setting later.  A name of "hello" will be usable as a placeholder
+// later as "{{.hello}}".
 func (a *accumulator) Get(t string, input []byte, path, name string) error {
 	switch t {
 	case TypeJSON:
@@ -34,10 +40,21 @@ func (a *accumulator) Get(t string, input []byte, path, name string) error {
 	}
 }
 
+// HeaderHeader extracts information from a given HTTP header.
+func (a *accumulator) GetHeader(input map[string][]string, key, name string) error {
+	value, ok := input[key]
+	if !ok {
+		return fmt.Errorf("no value in header at %q", key)
+	}
+
+	a.m.set(name, value)
+	return nil
+}
+
 func (a *accumulator) getJSON(input []byte, path, name string) error {
 	result := gjson.GetBytes(input, path)
 	if !result.Exists() {
-		return fmt.Errorf("no valid in body at %q", path)
+		return fmt.Errorf("no value in body at %q", path)
 	}
 
 	a.m.set(name, result.String())

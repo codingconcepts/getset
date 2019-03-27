@@ -8,16 +8,16 @@ import (
 
 type smap struct {
 	mu sync.RWMutex
-	m  map[string]string
+	m  map[string]interface{}
 }
 
 func newSMAP() *smap {
 	return &smap{
-		m: make(map[string]string),
+		m: make(map[string]interface{}),
 	}
 }
 
-func (m *smap) set(key, value string) {
+func (m *smap) set(key string, value interface{}) {
 	m.mu.Lock()
 	defer m.mu.Unlock()
 
